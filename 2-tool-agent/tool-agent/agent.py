@@ -14,14 +14,15 @@ def get_current_time() -> dict:
         "current_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
     }
 
+
 root_agent = Agent(
     name="tool_agent",
     model="gemini-2.5-flash-lite",
-    description="Tool agent",
+    description="Get Current Time",
     instruction="""
     You are a helpful assistant that can use the following tools:
     - get_current_time
     """,
     # tools=[google_search],
-    tools=[get_current_time]
+    tools=[get_current_time],
 )
